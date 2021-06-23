@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mario 64 - Happy Birthday</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+  <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+
+
+  <link rel="prefetch" href="static/mario.png" />
+  <link rel="prefetch" href="static/castle.png" />
+  <link rel="prefetch" href="static/block.jpg" />
+  <link rel="prefetch" href="static/goomba2.png" />
+  <link rel="prefetch" href="static/mario.mp3" />
+   <link rel="prefetch" href="static/coin.mp3" />
+
+
+    <meta property="og:image" content="https://vivirenremoto.github.io/mario_happybirthday/static/social.png">
+    <meta property="og:image:secure_url"
+        content="https://vivirenremoto.github.io/mario_happybirthday/static/social.png">
+    <meta property="og:image:alt" content="Mario 64 - Happy Birthday">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mario 64 - Happy Birthday">
+    <meta name="twitter:image" content="https://vivirenremoto.github.io/mario_happybirthday/static/social.png">
+
+
+  </head>
+  <body>
+
+
+  <audio id="sound_mario">
+        <source src="static/mario.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="sound_coin">
+        <source src="static/coin.mp3" type="audio/mp3">
+    </audio>
+
+
+<script>
+    
+
+
+  AFRAME.registerComponent('clickhandler', {
+        schema: {
+          txt: {default:'default'}
+        },        
+        init: function () {
+
+          var data = this.data;
+          var el = this.el;        
+          el.addEventListener('click', function () {      
+            if( data.txt == 'mario' ){
+              document.getElementById('sound_mario').currentTime = 0;
+              document.getElementById('sound_mario').play();
+            }else if( data.txt == 'coin' ){
+              document.getElementById('sound_coin').currentTime = 0;
+              document.getElementById('sound_coin').play();
+            }else if( data.txt == 'castle' ){
+              document.location = 'https://vivirenremoto.github.io/mario64stairs/';
+            }
+            
+          });        
+        }
+      });
+
+
+
+
+
+
+</script>
+
+
+
+
+    <a-scene cursor="rayOrigin: mouse"  raycaster="objects: .buttons" vr-mode-ui="enabled: false">
+
+
+    <a-entity
+       camera
+       look-controls="magicWindowTrackingEnabled: true"
+       ></a-entity>
+
+
+
+          <a-sky rotation="0 -80 0" src="static/photo.jpg" rotation="0 -130 0"></a-sky>
+      
+
+              <a-entity  position="-6 -1 -5.5"
+              rotation="0 6 0" animation="property: object3D.position.x; to: 2; dir: alternate; dur: 4000; loop: true" > 
+                <a-image clickhandler="txt:test1" class="buttons" data-title="imagen" src="static/goomba2.png" width="1" height="1">
+                    </a-entity>
+
+              
+              <a-entity position="10 -1 0"
+                rotation="0 -120 0" > 
+                <a-image clickhandler="txt:mario" class="buttons" data-title="imagen" src="static/mario.png" width="3" height="3">
+                </a-entity>
+      
+                <a-entity position="40 200 300"
+                    rotation="0 10 0" > 
+                    <a-image  clickhandler="txt:castle" class="buttons" data-title="imagen" src="static/castle.png" width="600" height="600">
+                    </a-entity>
+
+  
+                    <a-entity position="16 7 0"
+                rotation="0 -90 0" > 
+                <a-image class="buttons" data-title="imagen" src="happy.png" width="10" height="3">
+                </a-entity>
+
+                  <a-box class="buttons" clickhandler="txt:coin" src="static/block.jpg" position="-1.5 1 -3"></a-box>
+              
+
+    </a-scene>
+
+
+
+
+
+  </body>
+</html>
