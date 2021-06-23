@@ -4,4 +4,4 @@
 
 [Autor](https://twitter.com/vivirenremoto)
 
-![Mario 64 - Happy Birthday](https://vivirenremoto.github.io/mario_happybirthday/static/social.jpg)
+![Mario 64 - Happy Birthday](https://vivirenremoto.github.io/mario_happybirthday/static/social2.jpg)
