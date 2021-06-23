@@ -14,6 +14,7 @@
 <link rel="prefetch" href="static/goomba2.png" />
 <link rel="prefetch" href="static/mario2.mp3" />
 <link rel="prefetch" href="static/coin.mp3" />
+<link rel="prefetch" href="static/goomba.mp3" />
 
 
 <meta property="og:image" content="https://vivirenremoto.github.io/mario_happybirthday/static/social.jpg">
@@ -46,6 +47,10 @@ gtag('config', 'G-VX2M9NB3E4');
     <audio id="sound_coin">
         <source src="static/coin.mp3" type="audio/mp3">
     </audio>
+    
+    <audio id="sound_goomba">
+        <source src="static/goomba.mp3" type="audio/mp3">
+    </audio>
 
 
 <script>
@@ -67,6 +72,9 @@ gtag('config', 'G-VX2M9NB3E4');
             }else if( data.txt == 'coin' ){
               document.getElementById('sound_coin').currentTime = 0;
               document.getElementById('sound_coin').play();
+            }else if( data.txt == 'goomba' ){
+              document.getElementById('sound_goomba').currentTime = 0;
+              document.getElementById('sound_goomba').play();
             }else if( data.txt == 'castle' ){
               document.location = 'https://vivirenremoto.github.io/mario64stairs/';
             }
@@ -100,7 +108,7 @@ gtag('config', 'G-VX2M9NB3E4');
 
               <a-entity  position="-6 -1 -5.5"
               rotation="0 6 0" animation="property: object3D.position.x; to: 2; dir: alternate; dur: 4000; loop: true" > 
-                <a-image clickhandler="txt:test1" class="buttons" data-title="imagen" src="static/goomba2.png" width="1" height="1">
+                <a-image clickhandler="txt:goomba" class="buttons" data-title="imagen" src="static/goomba2.png" width="1" height="1">
                     </a-entity>
 
               
